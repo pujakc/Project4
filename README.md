@@ -16,7 +16,7 @@ This project aims to analyze movie data from 1980 to 2020 to understand the feat
 3. Feature Importance Analysis: Identify the key features that significantly impact movie profitability and provides for recommendation for movie production.
 
 ## Background
-The movie industry has traditionally relied on box office performane to gauge movie's success. However, with the advancement in the streaming platforms and shifting viewer preferences, the dynamics of movie profitability has evolved. Understanding these changes and identifying the factors that drive profitability in the new landscape is very crucial in order to maintain thriving movie industry. This project leverages a comprehensive movie dataset and inflation adjustment financial data to build predictive models and uncover insights itno the profibality drivers of movies.
+The movie industry has traditionally relied on box office performane to gauge movie's success. However, with the advancement in the streaming platforms and shifting viewer preferences, the dynamics of movie profitability has evolved. Understanding these changes and identifying the factors that drive profitability in the new landscape is very crucial in order to maintain thriving movie industry. This project leverages a comprehensive movie dataset and inflation adjustment financial data to build predictive models and uncover insights into the profibality drivers of movies.
 
 ## Detailed Project Overview
 
@@ -66,7 +66,7 @@ The clean.csv data was read in to do some additional imputation.
 
 -- The inflation adjusted factor was then multiplied against the movie's budget and it's gross to calculate it's inflation adjusted budget and gross in December 2020 dollars. The movie's profit, both in real and inflation adjusted values, was calculated by subtracting the movie's gross from it's budget.
 
--- The data with the inflation adjusted value's for gross, budget and profit was then exported as final_inflation_adj_data.csv.
+-- The data with the inflation adjusted values for gross, budget and profit was then exported as final_inflation_adj_data.csv.
 
    
 5. 03_a_Additional_EDA_Post_Adjustment.ipynb
@@ -91,7 +91,38 @@ Having settled on using the Random Forest regressor, we ran through several vari
 
 When budget is included in the model, it is consistently the top feature. 
 
+## Executive Summary
+
+This project aimed to identify the key factors inflencing movie profitability by comparing the performance of various machine learning models. The dataset was thoroughly cleaned, explored and preprocessed before training and evaluating different models. The goal was to select the best performing model based on RMSE and R2 scores and to use this model to identify tthe most important features contributing to movie success. The performance of different models was evaluated using several metrics. The Random Forest model performed the best amomng the evaluated models with high train R2 0.94 and test R2 0.48 coupled with the lowest RMSE of 15986405.93. Linear and Bagging Regressors performed poorly Ridge and Lasso Regression show balanced performance.Ridge handled overfitting better than Lasso.
+
+The Random Forest model, being the best performer, was used to identify the top features influencing movie profitability. The most important features were:
+
+1. Budget(budget_adj): Most significatnt factor
+2. Runtime: Second most important factor
+3. Rating: Significant but less influential than budget and runtime
+4. Production Companies: Marvel Studios, Twentieth Century Fox, Walt Disney Pictures, Universal Pictures, and Warner Bros. are among the top influencing companies 
+5. Star Power: Stars like Sam Worthington, Robert Downey Jr, Chris Patt and Vin Diesel contribute significantly
+6. Genre: Specific genres such as Animation, Comedy and Drama have notable impacts
+7. Release Timing: Months like December, June and July are crucial for movie success.
+
+## Conclusions
+
+The aphorism "you got to spend money to make money" holds up when it comes to helping predict what the most profitable movies are, particularly in the post-2007 streaming era. This is also reflected in the data showing that the **median** movie profit is down, while the **mean** movie profit is up, reinforcing how it's the few big blockbusters that are driving up movie profits, rather than a larger number of smaller and mid-budget.
+
+We can conclude that Movies with higher budget and optimal runtimes tend to be more successful. Well establised production companies have a significant impact on movie profitability. The involvement of popular stars enhances a movie's chances of success.Certain genres and strategic releas timings like holiday seasons and summer are associated with higher profitability.
+
+## Recommendations
+- Invest in High Budgets, allocate sufficient funds to prodution and marketing to increase the chances of movie success.
+- Make sure the movies have an optimal runtime that suits audience preferences
+- Collaborate with well-known production companies to leverage their market influence.
+- Cast high-progfile actors to attract larger audience.
+- Plan movie releases during peak seasons like summer and holidays to increase the viewers
+- Invest in top influencial genre to  mitigate risks.
+
+By following above recommendations, movie producers and studios can enhance the likelihood of their movies achieving greater profitability and success. Greater popularity and success indicates more movie production which leads to more employment across the industry.
+
 ## Data Sets and Data Dictionary
+
 |Feature|Type|Description|
 |---|---|---|
 |name|object|The name of the movie from the Kaggle data set|
@@ -117,10 +148,10 @@ When budget is included in the model, it is consistently the top feature.
 |profit|float|Calculating the movie's profit by subtracting it's gross from it's budget |
 |profit_adj|float|The result from multiplying the movie's profit * the inf_adj_value to determine the movie's profit in inflation-adjusted dollars |
 
-## Analysis, Conclusions and Recommendations
 
-The aphorism "you got to spend money to make money" holds up when it comes to helping predict what the most profitable movies are, particularly in the post-2007 streaming era. This is also reflected in the data showing that the **median** movie profit is down, while the **mean** movie profit is up, reinforcing how it's the few big blockbusters that are driving up movie profits, rather than a larger number of smaller and mid-budget.
 
-However, while this analysis focused on maximizing profit, further analysis should be done on rate of returns. While investing more in big-budget movies can help maximize profit, it also could potentially create additional risk exposure in losses. Further analysis should look at the percent profitability to see what has the best rate of return in investment. Addiitonally, since the number of movies that are profitable has been declining since the streaming error, further analysis should look into a classification model to predict if a movie is profitable or not. This can help us understand that if the same features that help maximize profit in raw dollars also can help generate the best rate of return while minimizing risk of losses.
+## Future works
+
+While this analysis focused on maximizing profit, further analysis should be done on rate of returns. While investing more in big-budget movies can help maximize profit, it also could potentially create additional risk exposure in losses. Further analysis should look at the percent profitability to see what has the best rate of return in investment. Addiitonally, since the number of movies that are profitable has been declining since the streaming error, further analysis should look into a classification model to predict if a movie is profitable or not. This can help us understand that if the same features that help maximize profit in raw dollars also can help generate the best rate of return while minimizing risk of losses.
 
 It is also worth collecting additional data on movie revenue from 2021 onwards to see how trends on movie grosses and budgets have faced in a post-pandemic landscape.
