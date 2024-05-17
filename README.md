@@ -4,7 +4,7 @@ General Assembly, Data Science Immersive
 May 2024
 
 ## Problem Statement
-With the rise of streaming platforms and changing viewer habits, the movie industry is facing new challenges in ensuring profitability and sustainibility. To help Hollywood continue producing profitable movies and creating jobs across the industry, we need to identify the key features that drive movie profitability and develop predictive models to guide future movie production decisions.
+With the rise of streaming platforms and changing viewer habits, the movie industry is facing new challenges in ensuring profitability and sustainability. To help Hollywood continue producing profitable movies and creating jobs across the industry, we need to identify the key features that drive movie profitability and develop predictive models to guide future movie production decisions.
 
 ## Project Overview
 
@@ -12,15 +12,15 @@ This project aims to analyze movie data from 1980 to 2020 to understand the feat
 
 ## Key Objectives
 1. Adjust movie budgets, gross and profit for inflation, since otherwise more recent movies would be seen as more profitable.
-2. Predict Movie Profitability. Develop a regression mocdel to predict net profit of movies
+2. Predict Movie Profitability. Develop a regression model to predict net profit of movies
 3. Feature Importance Analysis: Identify the key features that significantly impact movie profitability and provides for recommendation for movie production.
 
 ## Background
-The movie industry has traditionally relied on box office performane to gauge movie's success. However, with the advancement in the streaming platforms and shifting viewer preferences, the dynamics of movie profitability has evolved. Understanding these changes and identifying the factors that drive profitability in the new landscape is very crucial in order to maintain thriving movie industry. This project leverages a comprehensive movie dataset and inflation adjustment financial data to build predictive models and uncover insights into the profibality drivers of movies.
+The movie industry has traditionally relied on box office performance to gauge movie's success. However, with the advancement in the streaming platforms and shifting viewer preferences, the dynamics of movie profitability has evolved. Understanding these changes and identifying the factors that drive profitability in the new landscape is very crucial in order to maintain thriving movie industry. This project leverages a comprehensive movie dataset and inflation adjustment financial data to build predictive models and uncover insights into the profitability drivers of movies.
 
 ## Detailed Project Overview
 
-Data was aquired from two sources. The first source was a movie dataset from [Kaggle](https://www.kaggle.com/datasets/danielgrijalvas/movies/data) that included 7,688 movies released between 1980 and 2020. The second source was Consumer Price Index (CPI) data from the [Bureau of Labor Statistics](https://data.bls.gov/timeseries/CUUR0000SA0), covering the same years as the movie data set. 
+Data was acquired from two sources. The first source was a movie dataset from [Kaggle](https://www.kaggle.com/datasets/danielgrijalvas/movies/data) that included 7,688 movies released between 1980 and 2020. The second source was Consumer Price Index (CPI) data from the [Bureau of Labor Statistics](https://data.bls.gov/timeseries/CUUR0000SA0), covering the same years as the movie data set. 
 
 The workbooks should be read in the following order
 
@@ -93,11 +93,11 @@ When budget is included in the model, it is consistently the top feature.
 
 ## Executive Summary
 
-This project aimed to identify the key factors inflencing movie profitability by comparing the performance of various machine learning models. The dataset was thoroughly cleaned, explored and preprocessed before training and evaluating different models. The goal was to select the best performing model based on RMSE and R2 scores and to use this model to identify tthe most important features contributing to movie success. The performance of different models was evaluated using several metrics. The Random Forest model performed the best amomng the evaluated models with high train R2 0.94 and test R2 0.58 coupled with the lowest RMSE of 138,580,528.6. Linear and Bagging Regressors performed poorly Ridge and Lasso Regression show balanced performance.Ridge handled overfitting better than Lasso.
+This project aimed to identify the key factors influencing movie profitability by comparing the performance of various machine learning models. The dataset was thoroughly cleaned, explored and preprocessed before training and evaluating different models. The goal was to select the best performing model based on RMSE and R2 scores and to use this model to identify the most important features contributing to movie success. The performance of different models was evaluated using several metrics. The Random Forest model performed the best among the evaluated models with high train R2 0.94 and test R2 0.58 coupled with the lowest RMSE of 138,580,528.6. Linear and Bagging Regressors performed poorly Ridge and Lasso Regression show balanced performance. Ridge handled overfitting better than Lasso.
 
 The Random Forest model, being the best performer, was used to identify the top features influencing movie profitability. The most important features were:
 
-1. Budget(budget_adj): Most significatnt factor
+1. Budget(budget_adj): Most significant factor
 2. Runtime: Second most important factor
 3. Rating: Significant but less influential than budget and runtime
 4. Production Companies: Marvel Studios, Twentieth Century Fox, Walt Disney Pictures, Universal Pictures, and Warner Bros. are among the top influencing companies 
@@ -109,15 +109,15 @@ The Random Forest model, being the best performer, was used to identify the top 
 
 The aphorism "you got to spend money to make money" holds up when it comes to helping predict what the most profitable movies are, particularly in the post-2007 streaming era. This is also reflected in the data showing that the **median** movie profit is down, while the **mean** movie profit is up, reinforcing how it's the few big blockbusters that are driving up movie profits, rather than a larger number of smaller and mid-budget.
 
-We can conclude that Movies with higher budget and optimal runtimes tend to be more successful. Well establised production companies have a significant impact on movie profitability. The involvement of popular stars enhances a movie's chances of success.Certain genres and strategic releas timings like holiday seasons and summer are associated with higher profitability.
+We can conclude that Movies with higher budget and optimal runtimes tend to be more successful. Well established production companies have a significant impact on movie profitability. The involvement of popular stars enhances a movie's chances of success. Certain genres and strategic release timings like holiday seasons and summer are associated with higher profitability.
 
 ## Recommendations
-- Invest in High Budgets, allocate sufficient funds to prodution and marketing to increase the chances of movie success.
+- Invest in High Budgets, allocate sufficient funds to production and marketing to increase the chances of movie success.
 - Make sure the movies have an optimal runtime that suits audience preferences
 - Collaborate with well-known production companies to leverage their market influence.
-- Cast high-progfile actors to attract larger audience.
+- Cast high-profile actors to attract larger audience.
 - Plan movie releases during peak seasons like summer and holidays to increase the viewers
-- Invest in top influencial genre to  mitigate risks.
+- Invest in top genres like animation, comedy and drama to  mitigate risks.
 
 By following above recommendations, movie producers and studios can enhance the likelihood of their movies achieving greater profitability and success. Greater popularity and success indicates more movie production which leads to more employment across the industry.
 
