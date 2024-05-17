@@ -79,9 +79,17 @@ The clean.csv data was read in to do some additional imputation.
 
 -- It is not expenditures driving down profitability, but revenue. The **median** movie's budget has declined since 2007 in real dollars, indicating studios are generally spending less per movie than they have. Even the **mean** budget is flat since 2007. But there is a positive linear relationship between a movie's budget and it's profit, suggesting that holding all other factors constant, spending more money on a movie should increase it's profit.
 
-6. Modeling
-    
-7. Features
+6. 04_Modeling.ipynb
+
+In this workbook, we ran various models on some basic features to determine which models to select as we do additional feature engineering. We started with some basic features of the movie's rating, it's runtime, it's inflation adjusted budget, genre, company and month, and ran several models, including a Linear Regression, a Ridge Regression, a LASSO Regression, a Random Forest Regressor, an AdaBoost Regressor, a Graident Boosting Regressor, and Bagging Regressor.
+
+Of these models, the Random Forest Regressor had both the highest testing R2 and the lowest Root Mean Squared Error, with the Ridge Regression performing the second best on both those metrics.
+ 
+7. 05_Important_Features_Best_model.ipynb
+
+Having settled on using the Random Forest regressor, we ran through several variations to determine whether adding or subtracting certain features improved the model. The model that produced the highest R2 score and the lowest RMSE score included the features of the genre, company, country, month, star, rating, runtime and budget (but did not include the writer). 
+
+When budget is included in the model, it is consistently the top feature. 
 
 ## Data Sets and Data Dictionary
 |Feature|Type|Description|
@@ -109,4 +117,10 @@ The clean.csv data was read in to do some additional imputation.
 |profit|float|Calculating the movie's profit by subtracting it's gross from it's budget |
 |profit_adj|float|The result from multiplying the movie's profit * the inf_adj_value to determine the movie's profit in inflation-adjusted dollars |
 
-## Analysis
+## Analysis, Conclusions and Recommendations
+
+The aphorism "you got to spend money to make money" holds up when it comes to helping predict what the most profitable movies are, particularly in the post-2007 streaming era. This is also reflected in the data showing that the **median** movie profit is down, while the **mean** movie profit is up, reinforcing how it's the few big blockbusters that are driving up movie profits, rather than a larger number of smaller and mid-budget.
+
+However, while this analysis focused on maximizing profit, further analysis should be done on rate of returns. While investing more in big-budget movies can help maximize profit, it also could potentially create additional risk exposure in losses. Further analysis should look at the percent profitability to see what has the best rate of return in investment. Addiitonally, since the number of movies that are profitable has been declining since the streaming error, further analysis should look into a classification model to predict if a movie is profitable or not. This can help us understand that if the same features that help maximize profit in raw dollars also can help generate the best rate of return while minimizing risk of losses.
+
+It is also worth collecting additional data on movie revenue from 2021 onwards to see how trends on movie grosses and budgets have faced in a post-pandemic landscape.
